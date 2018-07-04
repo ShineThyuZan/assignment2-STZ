@@ -2,23 +2,19 @@
     <string name="app_name">TED Talk</string>
     <string name="action_settings">Settings</string>
     <string name="title"><b>TED</b> Talks</string>
-    <string name="top_show_name">lionel messi</string>
-    <string name="bottom_show_name">You are the best palyer <b>in the world!!!</b> </string>
+    <string name="top_show_name">Facebook</string>
+    <string name="bottom_show_name">The most used app  <b>in the world!!!</b> </string>
     <string name="time1">13:38 |</string>
     <string name="time">13:38</string>
     <string name="listen">Listen</string>
-    <string name="content_show_name">FC Barcelona are
-        often criticised for getting their stars to publicly speak about players who are linked with the club, but that has not stopped superstar Lionel Messi, who has once again discussed the Blaugrana\'s
-        potential signing of Antoine Griezmann.Messi, who has previously said he would welcome Griezmann at the Camp Nou, has again insisted the 27-year-old is one of the best in the business and that he would suit the Catalans.<i>TED2018, Flimed Apr 2018</i>
+    <string name="content_show_name">Today, Facebook COO Sheryl Sandberg, Director of Product Management Rob Leathern, and Product Marketing Director Emma Rodgers spoke with members of the media about new steps Facebook is taking to bring more transparency to ads and Pages.<i>TED2018, Flimed Apr 2018</i>
     </string>
-    <string name="content_show_name2">FC Barcelona are
-        often criticised for getting their stars to publicly speak about players who are linked with the club, but that has not stopped superstar Lionel Messi, who has once again discussed the Blaugrana\'s
-        potential signing of Antoine Griezmann.Messi, who has previously said he would welcome Griezmann at the Camp Nou.
+    <string name="content_show_name2">  One of my favorite quotes was from an editor of a magazine and I’ll read it, he wrote “trolls don’t like their friends to know they’re trolls.” And he was reacting to something I think he or one of his friends – they had taken all their comments and taken them from being anonymous to you had to log in — and he noted that the civility and quality of the discourse had increased dramatically. <s>                                                                                                                    </s>aid he would welcome Griezmann at the Camp Nou.
     </string>
     <string name="ted_link">TED Talks are free thanks to support from</string>
-    <string name="football">Football player , Model</string>
-    <string name="player">player in the world</string>
-    <string name="best">You are the best player in the world</string>
+    <string name="football">FaceBook application</string>
+    <string name="player">is the best in the world</string>
+    <string name="best">You are app in the world</string>
 
     <string name="time_format"><xliff:g id="tv_time">%1$s</xliff:g> : <xliff:g id="tv_time">%2$s</xliff:g></string>
 

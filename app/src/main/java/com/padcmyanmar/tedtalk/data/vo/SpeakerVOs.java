@@ -2,7 +2,7 @@ package com.padcmyanmar.tedtalk.data.vo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SpeakerVo {
+public class SpeakerVOs {
     @SerializedName("speaker_id")
     private String speakerId;
 

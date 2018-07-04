@@ -1,17 +1,17 @@
 package com.padcmyanmar.tedtalk.events;
 
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 
 import java.util.List;
 
 public class SuccessGetTedTedEvent {
-   private List<TalksVo> talksVos;
+   private List<TalksVOs> talksVOs;
 
-    public SuccessGetTedTedEvent(List<TalksVo> talksVos) {
-        this.talksVos = talksVos;
+    public SuccessGetTedTedEvent(List<TalksVOs> talksVOs) {
+        this.talksVOs = talksVOs;
     }
 
-    public List<TalksVo> getTalksVos() {
-        return talksVos;
+    public List<TalksVOs> getTalksVOs() {
+        return talksVOs;
     }
 }

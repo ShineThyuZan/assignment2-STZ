@@ -8,18 +8,18 @@ import android.view.ViewGroup;
 
 import com.padcmyanmar.tedtalk.R;
 
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 import com.padcmyanmar.tedtalk.viewholders.ViewHolderWatchNextDetails;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterTedTalksDetails extends RecyclerView.Adapter<ViewHolderWatchNextDetails> {
-    private List<TalksVo> mtalksVos;
+    private List<TalksVOs> mtalksVOs;
     int mtedId;
 
     public AdapterTedTalksDetails() {
-        mtalksVos = new ArrayList<>();
+        mtalksVOs = new ArrayList<>();
     }
 
     @NonNull
@@ -34,10 +34,10 @@ public class AdapterTedTalksDetails extends RecyclerView.Adapter<ViewHolderWatch
     public void onBindViewHolder(@NonNull ViewHolderWatchNextDetails holder, int position) {
 
         if(mtedId<8) {
-            holder.setTedsWatchData(mtalksVos.get(mtedId++));
+            holder.setTedsWatchData(mtalksVOs.get(mtedId++));
         }
         else {
-            holder.setTedsWatchData(mtalksVos.get(position));
+            holder.setTedsWatchData(mtalksVOs.get(position));
         }
 
     }
@@ -45,11 +45,11 @@ public class AdapterTedTalksDetails extends RecyclerView.Adapter<ViewHolderWatch
 
     @Override
     public int getItemCount() {
-        return mtalksVos.size()-9;
+        return mtalksVOs.size()-9;
     }
 
-    public void setMtalksVos(List<TalksVo> mtalksVos,String tedId) {
-        this.mtalksVos = mtalksVos;
+    public void setMtalksVos(List<TalksVOs> mtalksVOs, String tedId) {
+        this.mtalksVOs = mtalksVOs;
         mtedId = Integer.parseInt(tedId);
         notifyDataSetChanged();
     }

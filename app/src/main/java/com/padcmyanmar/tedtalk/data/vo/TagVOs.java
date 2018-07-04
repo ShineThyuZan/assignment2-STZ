@@ -2,7 +2,7 @@ package com.padcmyanmar.tedtalk.data.vo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class TagVo {
+public class TagVOs {
     @SerializedName("tag_id")
     private String tagId;
 

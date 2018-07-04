@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class TalksVo {
+public class TalksVOs {
 
     @SerializedName("talk_id")
     private String tedId;
@@ -13,7 +13,7 @@ public class TalksVo {
     private String title;
 
     @SerializedName("speaker")
-    private SpeakerVo speakers;
+    private SpeakerVOs speakers;
 
     @SerializedName("imageUrl")
     private String imgUrl;
@@ -25,7 +25,7 @@ public class TalksVo {
     private String description;
 
     @SerializedName("tag")
-    private List<TagVo> tag;
+    private List<TagVOs> tag;
 
     public String getTedId() {
         return tedId;
@@ -35,7 +35,7 @@ public class TalksVo {
         return title;
     }
 
-    public SpeakerVo getSpeakers() {
+    public SpeakerVOs getSpeakers() {
         return speakers;
     }
 
@@ -51,7 +51,7 @@ public class TalksVo {
         return description;
     }
 
-    public List<TagVo> getTag() {
+    public List<TagVOs> getTag() {
         return tag;
     }
 }

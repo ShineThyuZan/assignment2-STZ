@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.padcmyanmar.tedtalk.R;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ViewHolderWatchNextDetails extends RecyclerView.ViewHolder {
-    private TalksVo mtalksVo;
+    private TalksVOs mtalksVOs;
     @BindView(R.id.tv_bottom2)
     TextView tvBottom2;
     @BindView(R.id.tv_top_name2)
@@ -27,13 +27,13 @@ public class ViewHolderWatchNextDetails extends RecyclerView.ViewHolder {
         super(itemView);
         ButterKnife.bind(this,itemView);
     }
-    public void setTedsWatchData(TalksVo talksVo){
-        mtalksVo = talksVo;
-        tvTopName2.setText(mtalksVo.getSpeakers().getName());
+    public void setTedsWatchData(TalksVOs talksVOs){
+        mtalksVOs = talksVOs;
+        tvTopName2.setText(mtalksVOs.getSpeakers().getName());
         Glide.with(ivIconTop.getContext())
-                .load(mtalksVo.getImgUrl())
+                .load(mtalksVOs.getImgUrl())
                 .into(ivIconTop);
-        tvWatchTime.setText(TedNewsViewHolder.secondToMinute(mtalksVo.getDuringInSec()));
-        tvBottom2.setText(mtalksVo.getTitle());
+        tvWatchTime.setText(TedNewsViewHolder.secondToMinute(mtalksVOs.getDuringInSec()));
+        tvBottom2.setText(mtalksVOs.getTitle());
     }
 }

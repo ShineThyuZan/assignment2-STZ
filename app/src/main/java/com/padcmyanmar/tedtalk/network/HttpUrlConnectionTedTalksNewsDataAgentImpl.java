@@ -101,10 +101,10 @@ public class HttpUrlConnectionTedTalksNewsDataAgentImpl implements TedTalksNewsD
                 Gson gson = new Gson();
                 GetTedTalksResponse getTedTalksResponse = gson.fromJson(s, GetTedTalksResponse.class);
                 Log.d("onPostExecute", "Ted News size : " + getTedTalksResponse
-                        .getTalksVos().size());
+                        .getTalksVOs().size());
 
                 if (getTedTalksResponse.isResponseOk()) {
-                    SuccessGetTedTedEvent event = new SuccessGetTedTedEvent(getTedTalksResponse.getTalksVos());
+                    SuccessGetTedTedEvent event = new SuccessGetTedTedEvent(getTedTalksResponse.getTalksVOs());
                     EventBus.getDefault().post(event);
                 } else {
                     ApiErrorEvent event = new ApiErrorEvent(getTedTalksResponse.getMessage());

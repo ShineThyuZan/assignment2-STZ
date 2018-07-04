@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 import com.padcmyanmar.tedtalk.R;
 import com.padcmyanmar.tedtalk.adapters.TedAdapter;
-import com.padcmyanmar.tedtalk.data.model.TedTalksNewsModel;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.model.TedTalksModel;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
 import com.padcmyanmar.tedtalk.events.SuccessGetTedTedEvent;
 
@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
             }
         });
 
-        TedTalksNewsModel.getObj().loadTedNewsList();
+        TedTalksModel.getObj().loadTedNewsList();
 
 
     }
@@ -93,16 +93,16 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
     }
 
     @Override
-    public void onTapView(TalksVo talksVo) {
+    public void onTapView(TalksVOs talksVOs) {
         Intent intent = new Intent(getApplicationContext(), NewsDetailActivityTedTalk.class);
-        intent.putExtra("talk_id",talksVo.getTedId());
+        intent.putExtra("talk_id", talksVOs.getTedId());
         startActivity(intent);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onSuccessGetNews(SuccessGetTedTedEvent event){
-        Log.d("onSuccessGetNews","talks vo list : "+event.getTalksVos());
-        tedAdapter.setTedNewsList(event.getTalksVos());
+        Log.d("onSuccessGetNews","talks vo list : "+event.getTalksVOs());
+        tedAdapter.setTedNewsList(event.getTalksVOs());
 
 
     }

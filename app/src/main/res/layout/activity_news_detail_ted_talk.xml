@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/blackbackground" />
+                android:src="@drawable/fbg" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
                 android:layout_marginRight="@dimen/margin_medium_3"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:scaleType="centerCrop"
-                android:src="@drawable/linkimage" />
+                android:src="@drawable/fbitem" />
 
             <View
                 android:layout_width="match_parent"
@@ -212,7 +212,7 @@
                     android:layout_height="40dp"
                     android:layout_marginRight="@dimen/margin_small"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/lionelface3"
+                    android:src="@drawable/face"
                     app:civ_border_color="@color/primary_text" />
 
 

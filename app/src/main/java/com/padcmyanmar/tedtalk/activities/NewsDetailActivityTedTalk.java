@@ -4,23 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.padcmyanmar.tedtalk.R;
 import com.padcmyanmar.tedtalk.adapters.AdapterTedTalksDetails;
-import com.padcmyanmar.tedtalk.data.model.TedTalksNewsModel;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
-import com.padcmyanmar.tedtalk.events.SuccessGetTedTedEvent;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.padcmyanmar.tedtalk.data.model.TedTalksModel;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,23 +48,23 @@ public class NewsDetailActivityTedTalk extends BaseActivity {
 
 
         String talksId = getIntent().getStringExtra("talk_id");
-        TalksVo talksVo = TedTalksNewsModel.getObj().getTedTalksById(talksId);
-        adapterTedTalksDetails.setMtalksVos(TedTalksNewsModel.getObj().getmTalkVoList(),talksId);
-        bind(talksVo);
+        TalksVOs talksVOs = TedTalksModel.getObj().getTedTalksById(talksId);
+        adapterTedTalksDetails.setMtalksVos(TedTalksModel.getObj().getmTalkVoList(),talksId);
+        bind(talksVOs);
 
 
     }
 
-    public void bind(TalksVo talksVo) {
+    public void bind(TalksVOs talksVOs) {
         Glide.with(ivDetailsImg.getContext())
-                .load(talksVo.getImgUrl())
+                .load(talksVOs.getImgUrl())
                 .into(ivDetailsImg);
-        tvSpeakerName.setText(talksVo.getSpeakers().getName());
-        tvDetailTitle.setText(talksVo.getTitle());
-        tvDescription.setText(talksVo.getDescription());
-        tvTopName.setText(talksVo.getSpeakers().getName());
+        tvSpeakerName.setText(talksVOs.getSpeakers().getName());
+        tvDetailTitle.setText(talksVOs.getTitle());
+        tvDescription.setText(talksVOs.getDescription());
+        tvTopName.setText(talksVOs.getSpeakers().getName());
         Glide.with(circleImageView.getContext())
-                .load(talksVo.getImgUrl())
+                .load(talksVOs.getImgUrl())
                 .into(circleImageView);
 
     }

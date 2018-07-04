@@ -7,8 +7,8 @@ public class PlaylistVO {
     private String title;
     private String imageUrl;
     private int totalTalks;
-    private SpeakerVo speakers;
-    private List<TalksVo> talks;
+    private SpeakerVOs speakers;
+    private List<TalksVOs> talks;
 
 
 }

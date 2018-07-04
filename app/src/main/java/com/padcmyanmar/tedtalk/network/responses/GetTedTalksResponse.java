@@ -1,7 +1,7 @@
 package com.padcmyanmar.tedtalk.network.responses;
 
 import com.google.gson.annotations.SerializedName;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class GetTedTalksResponse {
     private String page;
 
     @SerializedName("ted_talks")
-    private List<TalksVo> talksVos;
+    private List<TalksVOs> talksVOs;
 
     public int getCode() {
         return code;
@@ -39,11 +39,11 @@ public class GetTedTalksResponse {
         return page;
     }
 
-    public List<TalksVo> getTalksVos() {
-        return talksVos;
+    public List<TalksVOs> getTalksVOs() {
+        return talksVOs;
     }
 
     public boolean isResponseOk() {
-        return (code == 200 && talksVos != null);
+        return (code == 200 && talksVOs != null);
     }
 }

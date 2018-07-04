@@ -58,7 +58,7 @@ public class RetorfitDataAgentImpl implements TedTalksNewsDataAgent {
             public void onResponse(Call<GetTedTalksResponse> call, Response<GetTedTalksResponse> response) {
                 GetTedTalksResponse tedNewsResponse = response.body();
                 if (tedNewsResponse != null && tedNewsResponse.isResponseOk()) {
-                    SuccessGetTedTedEvent event = new SuccessGetTedTedEvent(tedNewsResponse.getTalksVos());
+                    SuccessGetTedTedEvent event = new SuccessGetTedTedEvent(tedNewsResponse.getTalksVOs());
                     EventBus.getDefault().post(event);
                 } else {
                     if (tedNewsResponse == null) {

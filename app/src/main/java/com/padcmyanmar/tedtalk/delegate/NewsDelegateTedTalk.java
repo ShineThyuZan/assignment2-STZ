@@ -1,7 +1,7 @@
 package com.padcmyanmar.tedtalk.delegate;
 
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 
 public interface NewsDelegateTedTalk {
-    void onTapView(TalksVo talksVo);
+    void onTapView(TalksVOs talksVOs);
 }

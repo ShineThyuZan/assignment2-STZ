@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.padcmyanmar.tedtalk.R;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
 import com.padcmyanmar.tedtalk.viewholders.TedNewsViewHolder;
 
@@ -17,11 +17,11 @@ import java.util.List;
 
 public class TedAdapter extends RecyclerView.Adapter<TedNewsViewHolder> {
     private NewsDelegateTedTalk newsDelegateTedTalk;
-    private List<TalksVo> mtalksVos;
+    private List<TalksVOs> mtalksVOs;
 
     public TedAdapter(NewsDelegateTedTalk newsDelegateTedTalk) {
         this.newsDelegateTedTalk = newsDelegateTedTalk;
-        mtalksVos = new ArrayList<>();
+        mtalksVOs = new ArrayList<>();
     }
 
     @NonNull
@@ -35,18 +35,18 @@ public class TedAdapter extends RecyclerView.Adapter<TedNewsViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TedNewsViewHolder holder, int position) {
-        holder.setTedsNewsData(mtalksVos.get(position));
+        holder.setTedsNewsData(mtalksVOs.get(position));
     }
 
 
     @Override
     public int getItemCount() {
-        return mtalksVos.size();
+        return mtalksVOs.size();
     }
 
 
-    public void setTedNewsList(List<TalksVo> talksVos){
-        mtalksVos = talksVos;
+    public void setTedNewsList(List<TalksVOs> talksVOs){
+        mtalksVOs = talksVOs;
         notifyDataSetChanged();
 
     }

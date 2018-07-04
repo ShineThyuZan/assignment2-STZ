@@ -1,8 +1,7 @@
 package com.padcmyanmar.tedtalk.data.model;
 
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 import com.padcmyanmar.tedtalk.events.SuccessGetTedTedEvent;
-import com.padcmyanmar.tedtalk.network.HttpUrlConnectionTedTalksNewsDataAgentImpl;
 import com.padcmyanmar.tedtalk.network.RetorfitDataAgentImpl;
 import com.padcmyanmar.tedtalk.network.TedTalksNewsDataAgent;
 
@@ -14,51 +13,51 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TedTalksNewsModel {
-    private static TedTalksNewsModel obj;
-    private List<TalksVo> mTalkVoList;
-    private Map<String, TalksVo> mTedsMap;
+public class TedTalksModel {
+    private static TedTalksModel obj;
+    private List<TalksVOs> mTalkVoList;
+    private Map<String, TalksVOs> mTedsMap;
 
     private TedTalksNewsDataAgent tedTalksNewsDataAgent;
     private static final String DUMMY_ACCESS_TOKEN = "b002c7e1a528b7cb460933fc2875e916";
 
-    private TedTalksNewsModel() {
+    private TedTalksModel() {
         //tedTalksNewsDataAgent = HttpUrlConnectionTedTalksNewsDataAgentImpl.getObjInstance();
         tedTalksNewsDataAgent = RetorfitDataAgentImpl.getObjectInstance();
         mTedsMap = new HashMap<>();
         EventBus.getDefault().register(this);
     }
 
-    public static TedTalksNewsModel getObj() {
+    public static TedTalksModel getObj() {
         if (obj == null) {
-            obj = new TedTalksNewsModel();
+            obj = new TedTalksModel();
         }
         return obj;
 
 
     }
 
-    public TalksVo getTedTalksById(String tedId) {
+    public TalksVOs getTedTalksById(String tedId) {
         return mTedsMap.get(tedId);
     }
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void onSuccessGetTedtalks(SuccessGetTedTedEvent event) {
-        for (TalksVo talksVo : event.getTalksVos()) {
-            mTedsMap.put(talksVo.getTedId(), talksVo);
+        for (TalksVOs talksVOs : event.getTalksVOs()) {
+            mTedsMap.put(talksVOs.getTedId(), talksVOs);
         }
-        mTalkVoList = event.getTalksVos();
+        mTalkVoList = event.getTalksVOs();
     }
 
     public void loadTedNewsList() {
         tedTalksNewsDataAgent.loadTedNewsList(1, DUMMY_ACCESS_TOKEN);
     }
 
-    public Map<String, TalksVo> getmTedsMap() {
+    public Map<String, TalksVOs> getmTedsMap() {
         return mTedsMap;
     }
 
-    public List<TalksVo> getmTalkVoList() {
+    public List<TalksVOs> getmTalkVoList() {
         return mTalkVoList;
     }
 }

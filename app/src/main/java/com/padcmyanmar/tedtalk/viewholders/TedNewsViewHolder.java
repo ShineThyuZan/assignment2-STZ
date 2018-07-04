@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.padcmyanmar.tedtalk.R;
-import com.padcmyanmar.tedtalk.data.vo.TalksVo;
+import com.padcmyanmar.tedtalk.data.vo.TalksVOs;
 import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
 
 import butterknife.BindView;
@@ -25,7 +25,7 @@ public class TedNewsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tv_time)
     TextView tvTime;
     private NewsDelegateTedTalk newsDelegateTedTalk;
-    private TalksVo mTalksVo;
+    private TalksVOs mTalksVOs;
 
     public TedNewsViewHolder(View itemView, final NewsDelegateTedTalk newsDelegateTedTalk) {
 
@@ -35,7 +35,7 @@ public class TedNewsViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newsDelegateTedTalk.onTapView(mTalksVo);
+                newsDelegateTedTalk.onTapView(mTalksVOs);
             }
         });
     }
@@ -53,14 +53,14 @@ public class TedNewsViewHolder extends RecyclerView.ViewHolder {
         return minute + ":" + sec;
     }
 
-    public void setTedsNewsData(TalksVo talksVo) {
-        mTalksVo = talksVo;
-        tvTop.setText(mTalksVo.getSpeakers().getName());
-        tvBottom.setText(mTalksVo.getTitle());
+    public void setTedsNewsData(TalksVOs talksVOs) {
+        mTalksVOs = talksVOs;
+        tvTop.setText(mTalksVOs.getSpeakers().getName());
+        tvBottom.setText(mTalksVOs.getTitle());
         Glide.with(ivShow.getContext())
-                .load(mTalksVo.getImgUrl())
+                .load(mTalksVOs.getImgUrl())
                 .into(ivShow);
-        tvTime.setText(secondToMinute(mTalksVo.getDuringInSec()));
+        tvTime.setText(secondToMinute(mTalksVOs.getDuringInSec()));
 
 
     }
